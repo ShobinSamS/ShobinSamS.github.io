@@ -20,3 +20,15 @@
 .project-card>p:not(.project-meta){font-size:12px;line-height:1.85;color:var(--muted);margin-bottom:20px}
 .project-card .tags{margin-top:auto;margin-bottom:22px}
 @media(max-width:760px){.other-projects{margin-top:35px;padding-top:30px}.other-projects-heading{display:block}.other-projects-heading h3{font-size:24px;margin-bottom:10px}.other-projects-grid{grid-template-columns:1fr;gap:18px}.project-card{padding:24px}.project-card h4{font-size:21px}}
+
+.dataforge-project{margin-top:32px}
+.dataforge-project .project-image{padding-right:25px}
+.dataforge-project .window-bar,.dataforge-project .project-image img{width:100%}
+.dataforge-project .window-bar{border-radius:7px 7px 0 0}
+.dataforge-project .project-image img{aspect-ratio:auto}
+
+@media(max-width:760px){
+  .dataforge-project{margin-top:24px}
+  .dataforge-project .project-image{padding-right:20px}
+  .dataforge-project .project-facts{gap:20px}
+}
