@@ -115,14 +115,45 @@
     <section class="experience-section section-pad wrap" id="experience" aria-labelledby="experience-title">
       <div class="section-heading"><div><p class="eyebrow">02 / PROFESSIONAL EXPERIENCE</p><h2 id="experience-title">From proof of concept<br>to production.</h2></div><div class="employer"><strong>Tata Consultancy Services</strong><span>AI/ML Developer</span><span>Aug 2022 — Present · Trivandrum, India</span></div></div>
       <div class="experience-grid">
-        <article class="experience-item"><span class="work-index">01</span><h3>Agentic ticketing & FAQ</h3><p>Developed LLM agents for a ticketing tool and company FAQ chatbot under active development. The work combines knowledge graphs, tool calling, and MCP integrations.</p><div class="workload"><strong>15K–28K</strong><span>tickets per quarter</span></div></article>
-        <article class="experience-item"><span class="work-index">02</span><h3>Document validation</h3><p>Developed a validation system with YOLO, Azure Computer Vision, and Azure Document Intelligence. Led production deployment with cross-functional teams within a one-month delivery timeline.</p><div class="outcome"><strong>89%</strong><span>production accuracy</span><strong>~50%</strong><span>less manual verification effort</span></div><p class="small-note">PoC accuracy: 98%.</p></article>
-        <article class="experience-item"><span class="work-index">03</span><h3>Water quality prediction</h3><p>Built an IoT-based ML system using Raspberry Pi and sensor data to predict bacterial presence in water. Developed cloud ML pipelines and contributed to a patent-pending prediction approach.</p><div class="workload"><strong>82%</strong><span>prediction accuracy</span></div></article>
-        <article class="experience-item"><span class="work-index">04</span><h3>Generative AI for email</h3><p>Built an email drafting and evaluation tool with LLaMA 7B and Streamlit, providing real-time quality scores and suggestions to improve email effectiveness.</p><div class="experience-foot">Also presented AI/ML solutions through internal innovation programs, with several ideas recognized as best solutions.</div></article>
+        <article class="experience-item">
+          <h3>Enterprise AI for ticketing &amp; FAQs</h3>
+          <p>Built LangGraph workflows with MCP integrations for ticketing and FAQ assistance. Combined Neo4j knowledge graphs and vector search with Reciprocal Rank Fusion (RRF) to rank relevant enterprise information.</p>
+          <p>Deployed Docker containers to Azure App Service using a private Azure Container Registry. Used PostgreSQL, Redis for session management, and Azure Managed Redis to cache responses and reduce LLM calls.</p>
+        </article>
+        <article class="experience-item">
+          <h3>Automated document validation</h3>
+          <p>Built a document verification pipeline using YOLO classification, Vision Transformers, Azure Document Intelligence, and GPT-based structured extraction.</p>
+          <p>Optimized YOLO and ViT inference with ONNX Runtime and deployed an ETL pipeline that uses Azure-mounted document storage and multiprocessing for parallel inference and validation.</p>
+          <div class="workload"><strong>~50%</strong><span>less manual verification effort</span></div>
+        </article>
+        <article class="experience-item">
+          <h3>Generative AI email evaluation</h3>
+          <p>Built an email drafting and evaluation tool with LLaMA 7B and Streamlit that assesses draft quality and suggests improvements.</p>
+        </article>
+        <article class="experience-item">
+          <h3>Water quality prediction</h3>
+          <p>Developed machine learning models that use sensor measurements to predict bacterial presence in water, contributing to a patent-pending prediction approach.</p>
+        </article>
       </div>
     </section>
 
-    <section class="about-section section-pad" id="about" aria-labelledby="about-title"><div class="wrap about-grid"><div><p class="eyebrow">03 / ABOUT & TOOLKIT</p><h2 id="about-title">An engineer around<br>the whole system.</h2><p class="about-copy">I’m Shobin, an AI/ML engineer with 4+ years of experience. My work spans computer vision, production ML, and LLM applications. I care about how a model connects to data, tools, and the person using it.</p><p class="education"><strong>B.E. in Computer Science</strong><span>Amrita College of Engineering and Technology</span><span>2018–2022 · Nagercoil, India</span></p></div><div class="toolkit"><div><h3>Core engineering</h3><p>Python · SQL / PostgreSQL · FastAPI · PyTorch · Git</p></div><div><h3>LLMs & retrieval</h3><p>LangChain · LangGraph · Hugging Face · MCP · Qdrant · FAISS · Neo4j · Ollama</p></div><div><h3>Delivery & observability</h3><p>Celery · Redis · Docker Compose · GitHub Actions · OpenTelemetry · Prometheus · Grafana</p></div><div><h3>Computer vision & data</h3><p>YOLO · OpenCV · scikit-learn · Pandas · NumPy · Streamlit</p></div></div></div></section>
+    <section class="about-section section-pad" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <div>
+          <p class="eyebrow">03 / ABOUT &amp; TOOLKIT</p>
+          <h2 id="about-title">An engineer around<br>the whole system.</h2>
+          <p class="about-copy">I’m Shobin, an AI/ML engineer with 4+ years of experience. My work spans computer vision, production ML, and LLM applications. I care about how a model connects to data, tools, and the person using it.</p>
+          <p class="education"><strong>B.E. in Computer Science</strong><span>Amrita College of Engineering and Technology</span><span>2018–2022 · Nagercoil, India</span></p>
+        </div>
+        <div class="toolkit">
+          <div><h3>Languages</h3><p>Python · SQL (PostgreSQL)</p></div>
+          <div><h3>ML frameworks &amp; libraries</h3><p>PyTorch · Hugging Face Transformers · Sentence Transformers · OpenCV · scikit-learn · Pandas · NumPy</p></div>
+          <div><h3>Machine learning &amp; generative AI</h3><p>Deep learning · NLP · LLMs · LangChain · LangGraph · RAG · Agent orchestration · Tool calling · MCP · Embeddings · Hybrid retrieval · Cross-encoder reranking · Knowledge graphs</p></div>
+          <div><h3>Data &amp; retrieval</h3><p>Qdrant · FAISS · Neo4j · Redis · Azure Managed Redis</p></div>
+          <div><h3>Deployment &amp; tools</h3><p>FastAPI · Streamlit · Ollama · Celery · Docker · ONNX Runtime · Git · GitHub Actions · Azure App Service · Azure Container Registry · AWS</p></div>
+        </div>
+      </div>
+    </section>
 
     <section class="certifications wrap section-pad" aria-labelledby="cert-title"><div class="section-heading compact"><div><p class="eyebrow">04 / CREDENTIALS</p><h2 id="cert-title">Continuing to learn.</h2></div></div><div class="cert-grid"><a class="certificate" href="https://www.credly.com/badges/bac90222-ac8f-439c-a421-93cfd8da1dbc" target="_blank" rel="noopener noreferrer"><span class="cert-symbol" aria-hidden="true">✳</span><div><span class="mono">ANTHROPIC · SEP 2026</span><h3>Claude Certified Developer</h3><p>Foundations</p></div><span class="cert-arrow" aria-hidden="true">↗</span></a><a class="certificate" href="https://learn.microsoft.com/api/credentials/share/en-us/SHOBINSAMS-3778/3715004D67E82720?sharingId=90CD16C5F67FA5DB" target="_blank" rel="noopener noreferrer"><span class="cert-symbol microsoft" aria-hidden="true">⊞</span><div><span class="mono">MICROSOFT · EARNED 2025</span><h3>Azure AI Engineer Associate</h3><p>View credential record</p></div><span class="cert-arrow" aria-hidden="true">↗</span></a></div></section>
 
