@@ -1,0 +1,265 @@
+{
+  "method": "Rolling-origin retrospective comparison on exact report dates. All models use the same matched targets.",
+  "caveat": "Historical release times are unavailable. The short archive supports a retrospective benchmark only.",
+  "unit": "INR/quintal",
+  "first_archive_date": "2026-07-02",
+  "last_archive_date": "2026-07-29",
+  "holdout_start": "2026-07-24",
+  "minimum_observations_at_origin": 7,
+  "input_file_hashes": [
+    {
+      "date": "2026-07-02",
+      "sha256": "7a63e3e57746dc8f639933d12b29a255f5b153ac6ed7bd6a1b8ef279116cc528"
+    },
+    {
+      "date": "2026-07-04",
+      "sha256": "3eb78a2ed04fed1ec2b554665fcabca1a38b30c2da3440af9c3c9cdcec66d666"
+    },
+    {
+      "date": "2026-07-05",
+      "sha256": "ed2c8ad09aaeb24015edc77e665519601ddb52498784bfce124d683118d224b7"
+    },
+    {
+      "date": "2026-07-08",
+      "sha256": "115d6d8c82e22b63a86f6c963eab9743f4f067364be647e0f6f3a2e15574849c"
+    },
+    {
+      "date": "2026-07-09",
+      "sha256": "ff6d6af619afa613a552caa34f040474d39c2f6bc4611ad6228273454f089045"
+    },
+    {
+      "date": "2026-07-10",
+      "sha256": "f6e13162ba7daf045c8c5e20351a7d2024c876a489a56c0d35d3fa9058cd0ce9"
+    },
+    {
+      "date": "2026-07-11",
+      "sha256": "520bfb4a3d1a18a79fff64cf379356cc0889f4b97b7c811505ee5590cc1d1921"
+    },
+    {
+      "date": "2026-07-12",
+      "sha256": "b8ca28b617b66c7ac5607c867eb8ac9d52a2e0eb90d80940756c7cf6db4aa890"
+    },
+    {
+      "date": "2026-07-13",
+      "sha256": "b64b8eeb3168a9c9f7bdee2ea339daace1531055ef11c98413207f08ce9a90f6"
+    },
+    {
+      "date": "2026-07-14",
+      "sha256": "1fade1ccaeb3ab1ce349d15bd102911bf68281c7b4b02a82fd8498d77e1536b5"
+    },
+    {
+      "date": "2026-07-15",
+      "sha256": "ca88ac4d29e7c6aed5378397e85dbe66bf7ba3fb0b90aad74cb5240ab7299fa2"
+    },
+    {
+      "date": "2026-07-16",
+      "sha256": "a010de93d66994da0295a7b3d339819e565b9bbc6f035d275657562727a0574c"
+    },
+    {
+      "date": "2026-07-17",
+      "sha256": "7aaf445cddebc739c66d47a4a608a30c3c19d53c0e396a867ca93fc6c6c4b36b"
+    },
+    {
+      "date": "2026-07-18",
+      "sha256": "bd97423597671be4a5dfab8ca45db3555dca5e931ff659c676740cebd993d711"
+    },
+    {
+      "date": "2026-07-19",
+      "sha256": "deb2f0720214b72d63c63ce253e64f2da4f983aa7d52ef0b03838bbe297d0737"
+    },
+    {
+      "date": "2026-07-20",
+      "sha256": "2b56f88c9436274270d7552c722d168ce8579bebbdb7f1dbe646ee614839b738"
+    },
+    {
+      "date": "2026-07-21",
+      "sha256": "cceb2d3c1370639e002adeaff55421ab4c8192a584e06dd67fb94afedf4698a0"
+    },
+    {
+      "date": "2026-07-22",
+      "sha256": "588b64ef090c91af336c6b24aead0bb91e79f1ae1eb6e1261236c6bf5a94138e"
+    },
+    {
+      "date": "2026-07-23",
+      "sha256": "e14c5807a1aba215c714f9d7ae463129e38490d35b0adf6a1dc78a0bd94deab6"
+    },
+    {
+      "date": "2026-07-24",
+      "sha256": "056dbc4b076fd2ece9ffef4048f094a5dd5dd9a857631695bd8108dcac3b5f09"
+    },
+    {
+      "date": "2026-07-25",
+      "sha256": "c5cb987549b83e14750873a0a59b13c1c52b479a5fb9552817d0d424114ec3a2"
+    },
+    {
+      "date": "2026-07-26",
+      "sha256": "1c7501b21e57f346ef50a1c389f8bc2a02b19adfabea23f0e11c3cc4eeedacc0"
+    },
+    {
+      "date": "2026-07-27",
+      "sha256": "cd74b86858dc0fcc9ff0475b001a819e9bd9c76a66b937ca9b735fe6bec91752"
+    },
+    {
+      "date": "2026-07-28",
+      "sha256": "2b13bfb64a5cf8affaf654b3961b02e93d1113e0e9f4c471ae36f99d7c840b6c"
+    },
+    {
+      "date": "2026-07-29",
+      "sha256": "1cca74a13cac11e081dc69c9b72125cdbd03e59e04c935225a0b61ad924bc10a"
+    }
+  ],
+  "accepted_series_observations": 37782,
+  "rejected_rows": {},
+  "results": [
+    {
+      "commodity": "Tomato",
+      "horizon_days": 1,
+      "scored_matches": 2111,
+      "observed_targets": 3285,
+      "markets": 585,
+      "series": 597,
+      "metrics": {
+        "last_price": {
+          "mae_inr_per_quintal": 135.78,
+          "wape_pct": 6.46,
+          "nonpositive_predictions": 0
+        },
+        "mean7": {
+          "mae_inr_per_quintal": 180.54,
+          "wape_pct": 8.59,
+          "nonpositive_predictions": 0
+        },
+        "holt_05": {
+          "mae_inr_per_quintal": 150.84,
+          "wape_pct": 7.18,
+          "nonpositive_predictions": 0
+        }
+      }
+    },
+    {
+      "commodity": "Tomato",
+      "horizon_days": 7,
+      "scored_matches": 2107,
+      "observed_targets": 3285,
+      "markets": 536,
+      "series": 543,
+      "metrics": {
+        "last_price": {
+          "mae_inr_per_quintal": 263.31,
+          "wape_pct": 12.52,
+          "nonpositive_predictions": 0
+        },
+        "mean7": {
+          "mae_inr_per_quintal": 266.6,
+          "wape_pct": 12.68,
+          "nonpositive_predictions": 0
+        },
+        "holt_05": {
+          "mae_inr_per_quintal": 284.64,
+          "wape_pct": 13.54,
+          "nonpositive_predictions": 0
+        }
+      }
+    },
+    {
+      "commodity": "Onion",
+      "horizon_days": 1,
+      "scored_matches": 2113,
+      "observed_targets": 3281,
+      "markets": 563,
+      "series": 591,
+      "metrics": {
+        "last_price": {
+          "mae_inr_per_quintal": 116.63,
+          "wape_pct": 3.8,
+          "nonpositive_predictions": 0
+        },
+        "mean7": {
+          "mae_inr_per_quintal": 124.47,
+          "wape_pct": 4.06,
+          "nonpositive_predictions": 0
+        },
+        "holt_05": {
+          "mae_inr_per_quintal": 119.45,
+          "wape_pct": 3.9,
+          "nonpositive_predictions": 0
+        }
+      }
+    },
+    {
+      "commodity": "Onion",
+      "horizon_days": 7,
+      "scored_matches": 2106,
+      "observed_targets": 3281,
+      "markets": 523,
+      "series": 552,
+      "metrics": {
+        "last_price": {
+          "mae_inr_per_quintal": 163.33,
+          "wape_pct": 5.31,
+          "nonpositive_predictions": 0
+        },
+        "mean7": {
+          "mae_inr_per_quintal": 170.53,
+          "wape_pct": 5.54,
+          "nonpositive_predictions": 0
+        },
+        "holt_05": {
+          "mae_inr_per_quintal": 181.04,
+          "wape_pct": 5.88,
+          "nonpositive_predictions": 0
+        }
+      }
+    },
+    {
+      "commodity": "Potato",
+      "horizon_days": 1,
+      "scored_matches": 2230,
+      "observed_targets": 3351,
+      "markets": 599,
+      "series": 619,
+      "metrics": {
+        "last_price": {
+          "mae_inr_per_quintal": 76.5,
+          "wape_pct": 3.76,
+          "nonpositive_predictions": 0
+        },
+        "mean7": {
+          "mae_inr_per_quintal": 86.16,
+          "wape_pct": 4.23,
+          "nonpositive_predictions": 0
+        },
+        "holt_05": {
+          "mae_inr_per_quintal": 81.08,
+          "wape_pct": 3.98,
+          "nonpositive_predictions": 0
+        }
+      }
+    },
+    {
+      "commodity": "Potato",
+      "horizon_days": 7,
+      "scored_matches": 2090,
+      "observed_targets": 3351,
+      "markets": 546,
+      "series": 561,
+      "metrics": {
+        "last_price": {
+          "mae_inr_per_quintal": 116.11,
+          "wape_pct": 5.52,
+          "nonpositive_predictions": 0
+        },
+        "mean7": {
+          "mae_inr_per_quintal": 122.17,
+          "wape_pct": 5.81,
+          "nonpositive_predictions": 0
+        },
+        "holt_05": {
+          "mae_inr_per_quintal": 129.83,
+          "wape_pct": 6.17,
+          "nonpositive_predictions": 0
+        }
+      }
+    }
+  ]
+}

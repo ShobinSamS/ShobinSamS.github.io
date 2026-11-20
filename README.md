@@ -41,3 +41,7 @@ Open http://127.0.0.1:8000 in a browser. Press Ctrl+C in the terminal when finis
 ## Sites preview
 
 The private Sites deployment is a review copy. The source checkout's `.openai/hosting.json` is for that deployment and is not required for GitHub Pages. Keep the public GitHub Pages files and any later edits in version control.
+
+## Harvest case study
+
+The Harvest project in `index.html` links to `harvest.html`, with measured results and source attribution. `assets/harvest-benchmark.json` contains the aggregate scorecard and hashes of the published input files. The source repository is private, so the case study offers a code walkthrough by email. Numbers describe the verified 16 November 2026 collection and the July 2026 retrospective benchmark.

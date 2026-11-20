@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="Harvest by Shobin Sam S. An AWS agricultural price pipeline and reproducible forecast evaluation on published Indian mandi data.">
+  <title>Harvest — Agricultural Price Intelligence | Shobin Sam S</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20261120">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Shobin Sam, home"><span class="monogram">S<span>.</span></span><span>Shobin Sam <span class="brand-role">/ AI &amp; ML</span></span></a>
+    <a class="text-link" href="index.html#harvest">Back to projects</a>
+  </header>
+  <main id="main" class="wrap harvest-case">
+    <p class="eyebrow">APPLIED MACHINE LEARNING · DATA ENGINEERING</p>
+    <h1>Harvest<br>Price intelligence, grounded in market records.</h1>
+    <p class="case-lead">An agricultural price platform that collects published Indian mandi prices, tracks their provenance, and evaluates whether a model can improve on the latest observed price.</p>
+    <p class="case-date">Results verified on 16 November 2026.</p>
+    <div class="tags" aria-label="Technologies"><span>Python</span><span>SQLite FTS5</span><span>AWS Lambda</span><span>EventBridge</span><span>S3</span><span>GitHub Actions</span></div>
+
+    <section class="case-section" aria-labelledby="problem-title">
+      <h2 id="problem-title">From a reported price to a usable history</h2>
+      <p>Vegetable prices vary across markets, dates, varieties, grades, and units. A price page can remain reachable while its figures are stale. Harvest preserves each quote’s source date and raw fields, records collection failures, and retains corrections so comparisons can use a consistent series.</p>
+      <p>The verified public Tomato collection saved 1,271 price records from 26 markets across 26 states and union territories. Nineteen markets reported a price dated 16 November. This first collection selects one market per covered state or territory.</p>
+    </section>
+
+    <section class="case-section" aria-labelledby="architecture-title">
+      <h2 id="architecture-title">Collect, validate, publish</h2>
+      <p class="case-architecture">EventBridge schedule → Lambda collector → validated SQLite snapshot → private S3 → local dashboard</p>
+      <p>The 9 AM India time schedule runs source adapters that check access, validate fields, and preserve dates, units, source URLs, hashes, and revisions. A consistent database backup is verified before the snapshot is published. The local launcher downloads a changed snapshot, validates it, and can fall back to its previous verified copy.</p>
+      <p>A live Lambda verification completed in 3 minutes 40 seconds with 220 MB peak memory. The Tomato source succeeded. The complete run reported partial coverage because some other sources were stale or unavailable.</p>
+    </section>
+
+    <section class="case-section" id="evaluation" aria-labelledby="evaluation-title">
+      <h2 id="evaluation-title">What the real-data benchmark showed</h2>
+      <p>The reproducible benchmark uses 37,782 published tomato, onion, and potato observations over 25 reporting dates from 2–29 July 2026. It scores 12,757 matched forecast targets in the 24–29 July evaluation window, using fixed last-price, trailing-mean, and damped Holt methods.</p>
+      <p>Each series retains its state, district, market, variety, and grade. Training uses observations dated on or before the forecast origin. Scoring requires a reported price on the exact target date, a reported origin price, and at least seven training observations. MAE below is in INR per quintal.</p>
+      <div class="harvest-table-wrap"><table class="harvest-table">
+        <caption>Retrospective error on the same observed targets for each method</caption>
+        <thead><tr><th scope="col">Crop</th><th scope="col">Days ahead</th><th scope="col">Targets scored</th><th scope="col">Last price</th><th scope="col">7-day mean</th><th scope="col">Holt</th></tr></thead>
+        <tbody><tr><th scope="row">Tomato</th><td>1</td><td>2,111</td><td><strong>135.78</strong></td><td>180.54</td><td>150.84</td></tr>
+<tr><th scope="row">Tomato</th><td>7</td><td>2,107</td><td><strong>263.31</strong></td><td>266.60</td><td>284.64</td></tr>
+<tr><th scope="row">Onion</th><td>1</td><td>2,113</td><td><strong>116.63</strong></td><td>124.47</td><td>119.45</td></tr>
+<tr><th scope="row">Onion</th><td>7</td><td>2,106</td><td><strong>163.33</strong></td><td>170.53</td><td>181.04</td></tr>
+<tr><th scope="row">Potato</th><td>1</td><td>2,230</td><td><strong>76.50</strong></td><td>86.16</td><td>81.08</td></tr>
+<tr><th scope="row">Potato</th><td>7</td><td>2,090</td><td><strong>116.11</strong></td><td>122.17</td><td>129.83</td></tr></tbody>
+      </table></div>
+      <p>Last-price persistence had the lowest MAE in all six comparisons. The short archive and unknown historical release times limit what these retrospective scores establish. Regularly reporting markets are more likely to enter the scored subset. The production forecast layer applies separate freshness, history, and validation checks before issuing a numerical prediction.</p>
+      <p><a href="assets/harvest-benchmark.json">Download the scorecard with counts and input hashes</a>. It records the observed target count alongside the scored subset. GitHub Actions reproduces this scorecard from the pinned archive.</p>
+    </section>
+
+    <section class="case-section" aria-labelledby="retrieval-title">
+      <h2 id="retrieval-title">Evidence has an availability date</h2>
+      <p>SQLite FTS5 retrieves price observations, weather facts, and attributed news headline metadata. Queries can filter by observation date, state, and when Harvest first collected the evidence. Each result retains its source URL and scope.</p>
+      <p>The collection-time cutoff was checked against a real IMD district rainfall record. Its observation date was 19 August 2026, but Harvest first collected it on 24 October. The query excludes that record when reconstructing what Harvest knew in August.</p>
+      <p>This search is a foundation for a future cited explanation layer. The current index retrieves the latest indexed revision. A statement explaining a price change still needs evidence of arrivals, supplying regions, demand, or disruptions relevant to that market.</p>
+    </section>
+
+    <section class="case-section" aria-labelledby="verification-title">
+      <h2 id="verification-title">Verification and next work</h2>
+      <p>Sixty focused tests passed, and the GitHub workflow reproduced the benchmark. Checks cover parsing, provenance, calendar-based evaluation, forecast abstention, and recovery from an invalid or unavailable S3 snapshot.</p>
+      <p>The next modelling step is a longer history with verified market arrivals and recorded first-availability timestamps. The explanation layer needs labelled questions and citation evaluation. Forecasts and buy-or-wait recommendations are withheld when the current data fails validation.</p>
+      <div class="case-links"><a class="text-link" href="mailto:shobinsam000@gmail.com?subject=Harvest%20project%20code%20review">Request a code walkthrough</a><a class="text-link" href="index.html#work">Explore more projects</a></div>
+    </section>
+
+    <section class="case-section" aria-labelledby="sources-title">
+      <h2 id="sources-title">Data sources</h2>
+      <ul>
+        <li>Directorate of Marketing and Inspection, AGMARKNET, through the <a href="https://www.data.gov.in/catalog/current-daily-price-various-commodities-various-markets-mandi" target="_blank" rel="noopener noreferrer">Government of India open-data catalogue</a>, under the <a href="https://data.gov.in/Godl" target="_blank" rel="noopener noreferrer">Government Open Data License – India</a>.</li>
+        <li>Recent market quotes republished on <a href="https://mandiprices.co.in/methodology" target="_blank" rel="noopener noreferrer">MandiPrices</a>. Source dates and market-specific table rows are preserved.</li>
+        <li>Historical archive via <a href="https://github.com/kunal-rajput-317/mandi-data/tree/0960f76c6eac29442bcac5a8b27af82d8a9af4b4/data/2026/07" target="_blank" rel="noopener noreferrer">KrashiMitra, pinned July 2026 CSV archive</a>, sourced from AGMARKNET / data.gov.in and released under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>.</li>
+        <li>District rainfall from the <a href="https://nwdp.nwic.gov.in/en/dataset/rainfall-daily-imd" target="_blank" rel="noopener noreferrer">NWDP / IMD daily rainfall dataset</a>.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

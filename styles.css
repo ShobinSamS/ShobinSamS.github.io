@@ -32,3 +32,45 @@
   .dataforge-project .project-image{padding-right:20px}
   .dataforge-project .project-facts{gap:20px}
 }
+
+.harvest-project{margin-top:32px}
+.harvest-project .project-copy>p:not(.project-subtitle){font-size:14px}
+.harvest-project .project-subtitle{font-size:16px}
+.harvest-project .project-facts{gap:24px;flex-wrap:wrap}
+.harvest-project .project-facts span{font-size:12px;max-width:160px}
+.harvest-results{padding:36px 32px;background:#e8eee6;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.harvest-results .eyebrow{font-size:12px;line-height:1.6;color:#42604b}
+.harvest-results h4{font-size:27px;font-weight:600;letter-spacing:-.03em;line-height:1.25;margin:0 0 14px}
+.harvest-results>p:not(.eyebrow){font-size:14px;line-height:1.75;color:#46574b}
+.harvest-table-wrap{overflow-x:auto;max-width:100%}
+.harvest-table{width:100%;border-collapse:collapse;font-size:14px;text-align:left;margin:10px 0 20px;font-variant-numeric:tabular-nums}
+.harvest-table th,.harvest-table td{padding:14px 9px;border-bottom:1px solid #bccbbe;white-space:nowrap}
+.harvest-table th{font-weight:550}
+.harvest-table thead th{font-size:12px;color:#42604b}
+.harvest-table td{text-align:right}
+.harvest-table thead th:not(:first-child){text-align:right}
+.harvest-table strong{color:#245a36;font-weight:650}
+.harvest-results .text-link{align-self:flex-start;font-size:14px}
+.harvest-case{max-width:920px;padding-top:56px;padding-bottom:72px}
+.harvest-case h1{font-size:clamp(36px,6vw,62px);margin-top:22px;max-width:820px}
+.harvest-case .case-lead{font-size:19px;line-height:1.8;max-width:760px;color:var(--muted)}
+.harvest-case .case-section{padding:30px 0;border-top:1px solid var(--line);margin-top:30px}
+.harvest-case .case-section h2{font-size:29px;margin:0 0 20px}
+.harvest-case .case-section h3{font-size:20px;margin:26px 0 12px}
+.harvest-case p,.harvest-case li{font-size:16px;line-height:1.85;color:var(--muted)}
+.harvest-case .harvest-table{font-size:15px}
+.harvest-case .harvest-table thead th{font-size:14px}
+.harvest-case .harvest-table th,.harvest-case .harvest-table td{padding:14px 12px}
+.harvest-case .case-links{display:flex;gap:22px;flex-wrap:wrap}
+.harvest-case .text-link{font-size:14px}
+.harvest-case .case-date{font-size:14px}
+.harvest-case .case-architecture{padding:22px;background:var(--pale);color:var(--ink)}
+.harvest-case .case-section a:not(.text-link){color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){
+  .harvest-project{margin-top:24px}
+  .harvest-results{padding:28px 20px}
+  .harvest-results h4{font-size:25px}
+  .harvest-table th,.harvest-table td{padding:13px 7px}
+  .harvest-case{padding-top:32px}
+  .harvest-case .case-lead{font-size:17px}
+}
